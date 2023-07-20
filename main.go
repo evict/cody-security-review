@@ -11,7 +11,14 @@ import (
 
 func main() {
 
-	branch := os.Args[1]
+	var branch string
+
+	if len(os.Args) > 1 {
+		branch = os.Args[1]
+	} else {
+		fmt.Println("error: branch argument missing")
+		os.Exit(1)
+	}
 
 	diffs := sg.GetComparisonDiff("main", branch)
 
@@ -30,7 +37,7 @@ func main() {
 			switch ext {
 			case ".java", ".py", ".c", ".cpp", ".go", ".js", ".ts", ".cs", ".rb", ".php", ".tsx":
 
-				// exclude tests
+				// exclude tests for go, should go into a config file
 				if strings.Contains(d.NewPath, "_test.go") {
 					continue
 				}

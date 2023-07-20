@@ -7,6 +7,8 @@ import (
 	"os"
 )
 
+const sginstance = "https://sourcegraph.sourcegraph.com"
+
 type Event struct {
 	Name string
 	Data CompletionEvent
@@ -45,7 +47,7 @@ func (cli *HttpClient) AddHeader(key string, value string) {
 }
 
 func (cli *HttpClient) PostRequest(url string, body []byte) (*http.Response, error) {
-	req, err := http.NewRequest("POST", url, bytes.NewBuffer(body))
+	req, err := http.NewRequest("POST", sginstance+url, bytes.NewBuffer(body))
 	if err != nil {
 		return nil, err
 	}

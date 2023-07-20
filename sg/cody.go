@@ -56,7 +56,7 @@ func GetCompletions(query string, file string, branch string) string {
 
 	logging.Debug("requesting completions...")
 	httpClient.AddHeader("Accept", "text/event-stream")
-	resp, err := httpClient.PostRequest("https://sourcegraph.sourcegraph.com/.api/completions/stream", reqBody)
+	resp, err := httpClient.PostRequest("/.api/completions/stream", reqBody)
 
 	if err != nil {
 		panic(err)

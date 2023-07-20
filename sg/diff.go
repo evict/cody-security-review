@@ -60,7 +60,7 @@ query FileContent($repoName: String!, $revision: String!, $path: String!) {
 	// DO WE WANT THIS FROM MAIN?
 	logging.Debug("fetching file from branch")
 	httpClient.AddHeader("Content-Type", "application/json")
-	resp, err := httpClient.PostRequest("https://sourcegraph.sourcegraph.com/.api/graphql", reqBody)
+	resp, err := httpClient.PostRequest("/.api/graphql", reqBody)
 
 	if resp.StatusCode != 200 {
 		panic(err)
@@ -128,7 +128,7 @@ query ComparisonDiff($nodeID: ID!, $base: String!, $head: String!) {
 
 	logging.Debug("fetching diffs from branch")
 	httpClient.AddHeader("Content-Type", "application/json")
-	resp, err := httpClient.PostRequest("https://sourcegraph.sourcegraph.com/.api/graphql", reqBody)
+	resp, err := httpClient.PostRequest("/.api/graphql", reqBody)
 
 	if resp.StatusCode != 200 {
 		panic(err)

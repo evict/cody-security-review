@@ -3,7 +3,7 @@ package sg
 import (
 	"encoding/json"
 
-	"github.com/sourcegraph/cody-code-review/logging"
+	"github.com/evict/cody-security-review/logging"
 )
 
 type FileDiff struct {

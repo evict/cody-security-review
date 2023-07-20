@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/sourcegraph/cody-code-review/sg"
+	"github.com/evict/cody-security-review/sg"
 )
 
 func main() {

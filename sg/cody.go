@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/sourcegraph/cody-code-review/logging"
+	"github.com/evict/cody-security-review/logging"
 )
 
 func GetCompletions(query string, file string, branch string) string {
